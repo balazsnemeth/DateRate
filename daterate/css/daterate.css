@@ -13,6 +13,28 @@
 /* Swatches */
 /* A
 -----------------------------------------------------------------------------------------------------------*/
+
+.ios7-detected .ui-header {
+height:60px;
+}
+
+.ios7-detected .ui-header h1 {
+line-height:60px;
+}
+
+.ios7-detected .ui-header .ui-btn {
+top:24px !important;
+}
+
+// optional css, to add an color-separated statusbar
+.ios7-detected .ui-header {
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bfd255), color-stop(30%,#8eb92a), color-stop(31%,#72aa00), color-stop(100%,#9ecb2d)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #bfd255 0%,#8eb92a 30%,#72aa00 31%,#9ecb2d 100%); /* Chrome10+,Safari5.1+ */
+background: linear-gradient(to bottom, #bfd255 0%,#8eb92a 30%,#72aa00 31%,#9ecb2d 100%); /* W3C */
+}
+
+
+
 .ui-bar-a {
 	border: 1px solid #8b5079 /*{a-bar-border}*/;
 	background: #8b5079 /*{a-bar-background-color}*/;
