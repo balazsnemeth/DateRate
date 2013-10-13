@@ -1,0 +1,23 @@
+
+.ui-page [data-role=content]{
+	margin: auto;
+	max-width: 400px;
+}
+
+.startAnimation{
+	width:15%;
+	margin-right: auto;
+	margin-left: auto;
+	transition:width 1s;
+	word-wrap: break-word;
+	-webkit-transition:width 0.8s; /* Safari */
+	transition-timing-function: ease-in;
+	-webkit-transition-timing-function: ease-in;
+	/*transform-origin:center center;
+	-ms-transform-origin:center center; 
+	-webkit-transform-origin:center center; /* Safari and Chrome */
+}
+
+.transformWidth{
+	width:100%;
+}
