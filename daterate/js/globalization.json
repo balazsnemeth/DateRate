@@ -1,0 +1,22 @@
+{
+	"index_CreateDateRate": {
+    	"en" : "Create Date Rate",
+        "de" : "Erstellungsdatum bewerten",
+    	"hu" : "Új randi értékelés"
+    },
+    "index_JoinDateRate": {
+        "en" : "Join Date Rate",
+        "de" : "Registriert seit bewerten",
+        "hu" : "Csatlakozás randi értékeléshez"
+    },
+    "index_RatingStatus": {
+        "en" : "Rating Status",
+        "de" : "Bewertung-Status",
+        "hu" : "Randi értékelés állása"
+    },
+    "page4_StartRating": {
+       	"en" : "Start rating",
+        "de" : "Starten Bewertung",
+    	"hu" : "Értékelés kezdése"
+    }
+}

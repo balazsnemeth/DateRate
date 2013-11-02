@@ -21,3 +21,36 @@
 			}
 	    }
 	}
+
+	function element_theme_refresh( element, oldTheme, newTheme ) {
+		/* Update the page's new data theme. */
+		if( $(element).attr('data-theme') ) {
+			$(element).attr('data-theme', newTheme);
+		}
+
+		if( $(element).attr('class') ) {
+			/* Theme classes end in "-[a-z]$", so match that */
+			var classPattern = new RegExp('-' + oldTheme + '$');
+			newTheme = '-' + newTheme;
+
+			var classes =  $(element).attr('class').split(' ');
+
+			for( var key in classes ) {
+				if( classPattern.test( classes[key] ) ) {
+					classes[key] = classes[key].replace( classPattern, newTheme );
+				}
+			}
+
+			$(element).attr('class', classes.join(' '));
+		}
+	}
+
+
+var commonData = {
+	gender:"",
+	name:"",
+};
+
+var serverBaseURL = "http://daterate.us/dr/testserver/"
+
+var LocalizationManager = new LocalizationManager();

@@ -18,6 +18,21 @@
 	-webkit-transform-origin:center center; /* Safari and Chrome */
 }
 
+.validationTextFiled{
+	border-color:red;
+	box-shadow:inset 0 1px 4px rgba(255,0,0,0.2);
+}
+
+.nonValidTextFiled{
+	border-color:red;
+	box-shadow:inset 0 1px 4px rgba(255,0,0,0.2);
+}
+
+.nonValidLabel{
+	color:red;
+}
+
 .transformWidth{
 	width:100%;
 }
+
