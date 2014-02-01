@@ -25,6 +25,12 @@ function LocalizationManager(){
       }
     }
 
+    function addLocalizeItems(newItems){
+      console.log('merge '+Object.keys(newItems).length+' new items to '+Object.keys(this.Language).length+' orig items');
+        $.extend(this.Language,newItems);
+      console.log('full localize items '+Object.keys(this.Language).length);
+    }
+
     function getLocalizedString(key){
 
 
@@ -61,6 +67,7 @@ function LocalizationManager(){
     }*/
 
 //    this.downloadLocalizationData = downloadLocalizationData;
+    this.addLocalizeItems = addLocalizeItems;
     this.localizeBlock = localizeBlock;
     this.getLocalizedString = getLocalizedString;
     this.Language = Language;

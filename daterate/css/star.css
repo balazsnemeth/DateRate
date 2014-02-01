@@ -1,0 +1,15 @@
+.starButton {
+    background-image: url(../img/star_place.png);   
+    background-repeat: no-repeat; 
+    border: none;
+    margin: 5px;
+}
+
+.starContainer{float: left; width: 42px; height: 44px;}
+.starPlaceholderImage {position:absolute;z-index:1}
+.starSelectedImage {position:absolute;z-index:3}
+
+.ui-icon-daterate-star {
+	background-image: url("../img/star_place_small.png");
+	background-size: 18px 18px;
+}

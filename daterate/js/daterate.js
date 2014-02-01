@@ -1,3 +1,5 @@
+
+
 $(function() {
 	
 /*        $("#createDateRateButton").animate({
@@ -7,12 +9,15 @@ $(function() {
     	});*/
 
 	function init(){
+
+		var itemAnimationStartTimeDifferent = 100;
+
 		$('.startAnimation').each(function(index){
 						console.log(index);
 					setTimeout($.proxy(function() {
 						console.log('s'+index);
 						$( this ).addClass('transformWidth');
-					},this), index*300);
+					},this), index*itemAnimationStartTimeDifferent);
 				});
 
 				var iOS7UserAgentStr = /(iPad|iPhone);.*CPU.*OS 7_\d/i;

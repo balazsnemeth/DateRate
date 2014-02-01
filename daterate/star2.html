@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Star test</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">  
+
+<link href="css/codiqa.ext.min.css" rel="stylesheet">
+  <link href="css/jquery.mobile-1.4.0.min.css" rel="stylesheet">
+  <link href="css/daterate.css" rel="stylesheet">  
+  <link href="css/star.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="css/jquery.mobile.structure-1.4.0.css" rel="stylesheet">
+
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/jquery.mobile-1.4.0.min.js"></script>
+  <script src="js/codiqa.ext.min.js"></script>
+  <script src="js/star.js"></script>
+  
+  <script>
+ 
+  $( document ).ready(function() {
+    $( "p" ).text( "The DOM is now loaded and can be manipulated." );
+    for (var i = 0; i < 4; i++) {
+    var star = $("<img src='img/star_place.png' alt='Star' height='44' width='42' data-star-index='"+i+"' data-star-status='place' id='star_"+ i +"'>");
+    $("#testStars").append(star);
+    starManager.pushStar(star);
+  }
+  });
+ 
+  </script>
+ 
+</head>
+<body>
+ 
+<p>Not loaded yet.</p>
+
+<div data-role="page" data-control-title="CreateDateRate" data-theme="b" id="pageTmpStar">
+
+
+<div id="testStars">
+</div> 
+  
+
+<div class="main">
+  <h1><span class="international" propkey="{{title}}">{{title}}</span>
+  </h1>
+  {{#each categories}}
+  <div class="categories">
+    <h1><span class="international" propkey="{{headerTitle}}">{{headerTitle}}</span></h1>
+    {{#each items}}
+      <div class="entry">
+        <h1><span class="international" propkey="{{title}}">{{title}}</span>
+        </h1>
+        <p><span class="international" propkey="{{text}}">{{text}}</span></p>
+        <div class="body">
+          <div>floating selectable stars here!</div>
+          {{#each values.descriptions}}
+            <li>{{description}}</li>
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  {{/each}}
+
+</div>
+
+</div>
+
+</body>
+</html>

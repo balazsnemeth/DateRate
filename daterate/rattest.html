@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Home | DateRate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <link href="css/codiqa.ext.min.css" rel="stylesheet">
+  <link href="css/jquery.mobile.theme-1.3.1.min.css" rel="stylesheet">
+  <link href="css/daterate.css" rel="stylesheet">
+  <link href="css/jquery.mobile.structure-1.3.1.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+  <script src="js/jquery-1.9.1.min.js"></script>
+  <script src="js/jquery.mobile-1.3.1.min.js"></script>
+  <script src="js/codiqa.ext.min.js"></script>
+  <script>
+
+  
+    jQuery(document).bind("mobileinit", function () {
+        console.log("configuring jqm...");
+        jQuery.support.cors = true;
+        jQuery.mobile.allowCrossDomainPages = true;
+         
+        jQuery.mobile.phonegapNavigationEnabled = true;
+        jQuery.mobile.defaultDialogTransition = "pop";
+        jQuery.mobile.defaultPageTransition = "none";
+         
+        jQuery.mobile.loader.prototype.options.text = "loading";
+        jQuery.mobile.loader.prototype.options.textVisible = true;
+        jQuery.mobile.loader.prototype.options.theme = "a";
+    });
+    
+  </script>
+  <script src="js/localize.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/handlebars.js"></script> 
+  <script src="js/ratingManager.js"></script> 
+  <script src="js/daterate.js"></script> 
+</head>
+<body>
+  <div data-role="page" data-control-title="Test" data-theme="d" id="pageTest">
+      <div data-theme="d" data-role="header">
+          <h3>
+              Date Rate
+          </h3>
+      </div>
+      <div data-role="content" >
+          <div id="ratingList">
+          </div>
+      </div>
+  </div>
+  <script>
+  $( document ).ready(function() {
+    var ratingManager = new RatingManager("dateTemplate2",$('#ratingList'));
+    ratingManager.init(function(){
+      LocalizationManager.localizeBlock($('#ratingList'));
+    });
+  });
+  </script>
+</body>
+</html>

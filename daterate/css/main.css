@@ -8,9 +8,9 @@
 	width:15%;
 	margin-right: auto;
 	margin-left: auto;
-	transition:width 1s;
+	transition:width 0.3s;
 	word-wrap: break-word;
-	-webkit-transition:width 0.8s; /* Safari */
+	-webkit-transition:width 0.3s; /* Safari */
 	transition-timing-function: ease-in;
 	-webkit-transition-timing-function: ease-in;
 	/*transform-origin:center center;
@@ -33,6 +33,6 @@
 }
 
 .transformWidth{
-	width:100%;
+	width:90%;
 }
 

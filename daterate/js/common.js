@@ -45,10 +45,18 @@
 		}
 	}
 
+console.logCopy = console.log.bind(console);
+
+console.log = function(data)
+{
+    var currentDate = '[' + new Date().toUTCString() + '] ';
+    this.logCopy(currentDate, data);
+};
 
 var commonData = {
 	gender:"",
 	name:"",
+	userId:""
 };
 
 var serverBaseURL = "http://daterate.us/dr/testserver/"
