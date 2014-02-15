@@ -12,9 +12,12 @@
   <link href="css/daterate.css" rel="stylesheet">
   <link href="css/jquery.mobile.structure-1.3.1.min.css" rel="stylesheet">
   <link href="css/main.css" rel="stylesheet">
+  <link href="css/star.css" rel="stylesheet">
+
   <script src="js/jquery-1.9.1.min.js"></script>
   <script src="js/jquery.mobile-1.3.1.min.js"></script>
   <script src="js/codiqa.ext.min.js"></script>
+  <script src="js/star.js"></script>
   <script>
 
   
@@ -38,6 +41,11 @@
   <script src="js/handlebars.js"></script> 
   <script src="js/ratingManager.js"></script> 
   <script src="js/daterate.js"></script> 
+
+  <script id="dateTemplateBuild" type="text/x-handlebars-template">
+    template content
+  </script>
+
 </head>
 <body>
   <div data-role="page" data-control-title="Test" data-theme="d" id="pageTest">
@@ -54,7 +62,10 @@
   <script>
   $( document ).ready(function() {
     var ratingManager = new RatingManager("dateTemplate2",$('#ratingList'));
-    ratingManager.init(function(){
+    ratingManager.init(function(localizeElements){
+      if (typeof localizeElements !== "undefined") {
+         LocalizationManager.addLocalizeItems(localizeElements);        
+      };
       LocalizationManager.localizeBlock($('#ratingList'));
     });
   });

@@ -8,7 +8,7 @@
 	width:15%;
 	margin-right: auto;
 	margin-left: auto;
-	transition:width 0.3s;
+	transition:width 0.1s;
 	word-wrap: break-word;
 	-webkit-transition:width 0.3s; /* Safari */
 	transition-timing-function: ease-in;

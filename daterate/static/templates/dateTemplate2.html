@@ -1,17 +1,24 @@
-  <div class="categories">
+<div class="categories">
     <h1><span class="international" propkey="{{headerTitle}}">{{headerTitle}}</span></h1>
     {{#each items}}
-      <div class="entry">
+    <div class="entry">
         <h1><span class="international" propkey="{{title}}">{{title}}</span>
         </h1>
+
         <p><span class="international" propkey="{{text}}">{{text}}</span></p>
-        <div class="body">
-          <div>floating selectable stars here!
-          </div>
-          {{#each values.descriptions}}
-            <li>{{description}}</li>
-          {{/each}}
+
+        <div class="starbody">
+            <div class="MainStarContainer"></div>
+            {{#if values.descriptions}}
+            <div class="MainStarDescription">
+                {{#each values.descriptions}}
+                <div class="starDescription" style="display:none;">
+                    <span class="international" propkey="{{description}}"> {{description}} </span>
+                </div>
+                {{/each}}
+                {{/if}}
+            </div>
         </div>
-      </div>
+    </div>
     {{/each}}
-  </div>
+</div>

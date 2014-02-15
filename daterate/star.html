@@ -22,12 +22,20 @@
 
 <script>
 
+var descriptions = ["first","second","third","fourth","fifth","sixth"];
+
+function starBeforeClicked(starIndex){
+  $("#description")[0].innerHTML=descriptions[starIndex];
+}
+
+
  $( document ).ready(function() {
 
   console.log('The DOM is now loaded and can be manipulated.');
-  starManager.addStar($("#testStars"),5);
+  starManager.addStar($("#testStars"),5,starBeforeClicked);
 });
  
+
 </script>
 
 </head>
@@ -40,6 +48,9 @@
 
 <div id="testStars">
 </div> 
+<div id="description">
+</div> 
+
   
 
 <div class="main">
