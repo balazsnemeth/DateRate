@@ -1,449 +1,445 @@
 {
-	"evalutaion":{
-		"title":"date_evaluation",
-		"categories":[{
-			"header title":"date_external_characteristics",
-			"header text":"",
-			"footer text":"",
-			"items":[
-				{
-					"title":"",
-					"text":"date_summarize_external",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"date_very_bad"
-							},
-							{
-								"index":3,
-								"description":"date_prince"
-							},
-							{
-								"index":5,
-								"description":"date_best"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"date_style_of_dress",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"date_very_bad"
-							},
-							{
-								"index":3,
-								"description":"date_it_works"
-							},
-							{
-								"index":5,
-								"description":"date_best"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Igényesnek tartod-e a megjenesét?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5"
-					}
-				},
-				{
-					"title":"",
-					"text":"Ápolt, tiszta-e a külseje?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5"
-					}
-				}
-			]
-		},
-		{
-			"header title":"Belső tulajdonságok",
-			"header text":"",
-			"footer text":"",
-			"items":[
-				{
-					"title":"",
-					"text":"Mennyire tudott rád hangolódni?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Köze sincs hozzám"
-							},
-							{
-								"index":3,
-								"description":"Figyelt rám"
-							},
-							{
-								"index":5,
-								"description":"Nagyon érzett"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Szerinted mennyire vetített, mennyire tudta magát adni?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Átlátszó volt"
-							},
-							{
-								"index":3,
-								"description":"Majd megismerem"
-							},
-							{
-								"index":5,
-								"description":"Ez tuti ő"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Mennyire megbízható?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5"
-					}
-				},
-				{
-					"title":"",
-					"text":"Egyezik-e az érdeklődési körötök?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Semmi közös sincs"
-							},
-							{
-								"index":3,
-								"description":"Vannak közös pontok"
-							},
-							{
-								"index":5,
-								"description":"Tutira"
-							}
-						]
-					}
-				}
-			]
-		},
-		{
-			"header title":"A randitok",
-			"header text":"",
-			"footer text":"",
-			"items":[
-				{
-					"title":"",
-					"text":"Milyen volt a randitok hangulata?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Túl vagyok rajta"
-							},
-							{
-								"index":3,
-								"description":"Ismételhető"
-							},
-							{
-								"index":5,
-								"description":"Felejthetetlen"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Jo, hogy minden ugy alakult, ahogy?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Megbántam"
-							},
-							{
-								"index":5,
-								"description":"Teljesen"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Mennyire jutottatok elöre?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Semennyire"
-							},
-							{
-								"index":3,
-								"description":"Alig"
-							},
-							{
-								"index":3,
-								"description":"Pont jó"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Összessegeben mennyire erezted magadat jól Vele?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Menekültem volna"
-							},
-							{
-								"index":3,
-								"description":"Ismételhetünk"
-							},
-							{
-								"index":5,
-								"description":"Felejthetetlen"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Mennyire találta el, amire vágytál?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Egyáltalán nem"
-							},
-							{
-								"index":3,
-								"description":"Nem szúrta el"
-							},
-							{
-								"index":5,
-								"description":"Belém látott"
-							}
-						]
-					}
-				}
-			]
-		},
-		{
-			"header title":"Kettőtök",
-			"header text":"",
-			"footer text":"",
-			"items":[
-				{
-					"title":"",
-					"text":"Mennyit nevetettek egyutt?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"No vidámság"
-							},
-							{
-								"index":5,
-								"description":"Rengeteget"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Mennyit tudtatok együtt beszélgenti?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Semmit"
-							},
-							{
-								"index":5,
-								"description":"Tartalmasan, sokat"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Mennyire hasonló az ízlésetek?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Semennyire"
-							},
-							{
-								"index":3,
-								"description":"Eléggé"
-							},
-							{
-								"index":3,
-								"description":"Pont az enyém"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Mennyire értett meg Téged?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Hagyjon békén"
-							},
-							{
-								"index":3,
-								"description":"Eléggé"
-							},
-							{
-								"index":5,
-								"description":"Belém látott"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Szerinted összeilletek?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Egyáltalán nem"
-							},
-							{
-								"index":5,
-								"description":"Tökéletesen"
-							}
-						]
-					}
-				},
-				{
-					"title":"",
-					"text":"Mit gondolsz, mi lesz kettőtökkel?",
-					"selectedIndex":-1,
-					"values":{
-						"range":"1-5",
-						"descriptions":[
-							{
-								"index":1,
-								"description":"Semmi"
-							},
-							{
-								"index":2,
-								"description":"Futó kaland"
-							},
-							{
-								"index":3,
-								"description":"Barátság"
-							},
-							{
-								"index":4,
-								"description":"Próbáljuk tovább"
-							},
-							{
-								"index":5,
-								"description":"Mindent bele :)"
-							}
-						]
-					}
-				}
-			]
-		}
-		],
-		"localization":{
-			"date_evaluation": {
-		    	"en" : "Date Rate",
-		    	"de" : "Date Rate DE",
-		        "hu" : "Randi értékelés"
-		    },
-		    "date_external_characteristics": {
-		        "en" : "External Characteristics",
-		        "de" : "External Characteristics DE",
-		        "hu" : "Külső tulajdonságok"
-		    },
-		    "date_summarize_external": {
-		        "en" : "What is the overall impression of the exterior for?",
-		        "de" : "Was ist der Gesamteindruck des Äußeren für?",
-		        "hu" : "Milyen az összbenyomásod a külsejére nézve?"
-		    },
-		    "date_very_bad": {
-		        "en" : "Very bad",
-		        "de" : "Sehr Schlecht",
-		        "hu" : "Nagyon gáz"
-		    },
-		    "date_prince": {
-		        "en" : "Prince of my dreams",
-		        "de" : "Prince of my dreams",
-		        "hu" : "Álmaim hercege"
-		    },
-		    "date_best": {
-		        "en" : "The best",
-		        "de" : "Die beste",
-		        "hu" : "Csúcs"
-		    },
-		    "date_style_of_dress": {
-		        "en" : "Wie gefällt Ihnen der Stil der Kleidung?",
-		        "de" : "Prince of my dreams",
-		        "hu" : "Hogy tetszik az öltözködési stílusa?"
-		    },
-		    "date_it_works": {
-		        "en" : "It works",
-		        "de" : "Es funktioniert für mich",
-		        "hu" : "Nekem bejön"
-		    },
-		    "date_prince": {
-		        "en" : "Prince of my dreams",
-		        "de" : "Prince of my dreams",
-		        "hu" : "Álmaim hercege"
-		    }
-		}
-	}
+    "evalutaion": {
+        "title": "date_evaluation",
+        "categories": [
+            {
+                "headerTitle": "date_external_characteristics",
+                "headerText": "",
+                "footerText": "",
+                "items": [
+                    {
+                        "title": "",
+                        "text": "date_summarize_external",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "date_very_bad"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "date_prince"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "date_best"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "date_style_of_dress",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "date_very_bad"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "date_it_works"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "date_best"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Igényesnek tartod-e a megjenesét?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5"
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Ápolt, tiszta-e a külseje?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5"
+                        }
+                    }
+                ]
+            },
+            {
+                "headerTitle": "Belső tulajdonságok",
+                "headerText": "",
+                "footerText": "",
+                "items": [
+                    {
+                        "title": "",
+                        "text": "Mennyire tudott rád hangolódni?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Köze sincs hozzám"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Figyelt rám"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Nagyon érzett"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Szerinted mennyire vetített, mennyire tudta magát adni?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Átlátszó volt"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Majd megismerem"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Ez tuti ő"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Mennyire megbízható?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5"
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Egyezik-e az érdeklődési körötök?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Semmi közös sincs"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Vannak közös pontok"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Tutira"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "headerTitle": "A randitok",
+                "headerText": "",
+                "footerText": "",
+                "items": [
+                    {
+                        "title": "",
+                        "text": "Milyen volt a randitok hangulata?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Túl vagyok rajta"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Ismételhető"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Felejthetetlen"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Jo, hogy minden ugy alakult, ahogy?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Megbántam"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Teljesen"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Mennyire jutottatok elöre?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Semennyire"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Alig"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Pont jó"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Összessegeben mennyire erezted magadat jól Vele?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Menekültem volna"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Ismételhetünk"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Felejthetetlen"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Mennyire találta el, amire vágytál?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Egyáltalán nem"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Nem szúrta el"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Belém látott"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "headerTitle": "Kettőtök",
+                "headerText": "",
+                "footerText": "",
+                "items": [
+                    {
+                        "title": "",
+                        "text": "Mennyit nevetettek egyutt?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "No vidámság"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Rengeteget"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Mennyit tudtatok együtt beszélgenti?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Semmit"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Tartalmasan, sokat"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Mennyire hasonló az ízlésetek?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Semennyire"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Eléggé"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Pont az enyém"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Mennyire értett meg Téged?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Hagyjon békén"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Eléggé"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Belém látott"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Szerinted összeilletek?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Egyáltalán nem"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Tökéletesen"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "title": "",
+                        "text": "Mit gondolsz, mi lesz kettőtökkel?",
+                        "selectedIndex": -1,
+                        "values": {
+                            "range": "1-5",
+                            "descriptions": [
+                                {
+                                    "index": 1,
+                                    "description": "Semmi"
+                                },
+                                {
+                                    "index": 2,
+                                    "description": "Futó kaland"
+                                },
+                                {
+                                    "index": 3,
+                                    "description": "Barátság"
+                                },
+                                {
+                                    "index": 4,
+                                    "description": "Próbáljuk tovább"
+                                },
+                                {
+                                    "index": 5,
+                                    "description": "Mindent bele :)"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "localization": {
+        "date_evaluation": {
+            "en": "Date Rate",
+            "de": "Date Rate DE",
+            "hu": "Randi értékelés"
+        },
+        "date_external_characteristics": {
+            "en": "External Characteristics",
+            "de": "External Characteristics DE",
+            "hu": "Külső tulajdonságok"
+        },
+        "date_summarize_external": {
+            "en": "What is the overall impression of the exterior for?",
+            "de": "Was ist der Gesamteindruck des Äußeren für?",
+            "hu": "Milyen az összbenyomásod a külsejére nézve?"
+        },
+        "date_very_bad": {
+            "en": "Very bad",
+            "de": "Sehr Schlecht",
+            "hu": "Nagyon gáz"
+        },
+        "date_prince": {
+            "en": "Prince of my dreams",
+            "de": "Prince of my dreams",
+            "hu": "Álmaim hercege"
+        },
+        "date_best": {
+            "en": "The best",
+            "de": "Die beste",
+            "hu": "Csúcs"
+        },
+        "date_style_of_dress": {
+            "en": "Wie gefällt Ihnen der Stil der Kleidung?",
+            "de": "Prince of my dreams",
+            "hu": "Hogy tetszik az öltözködési stílusa?"
+        },
+        "date_it_works": {
+            "en": "It works",
+            "de": "Es funktioniert für mich",
+            "hu": "Nekem bejön"
+        }
+    }
 }

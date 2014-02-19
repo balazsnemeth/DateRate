@@ -36,3 +36,11 @@
 	width:90%;
 }
 
+body {
+    overflow: hidden;
+    -ms-content-zooming: none;
+}
+
+body {
+    -ms-touch-action:none;
+}
