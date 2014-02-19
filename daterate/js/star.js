@@ -43,6 +43,7 @@ function StarManager() {
 
     function starClicked(clickEvent) {
         var star = $(clickEvent.target).parent();
+        star.stop().animate({transform:'scale(2)'}, 3000);
         var starIndex = star.data("starIndex");
         var starStatus = star.data("starStatus");
         //console.log("starIndex: "+starIndex);

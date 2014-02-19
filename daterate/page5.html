@@ -24,6 +24,7 @@
   <script src="js/handlebars.js"></script>
   <script src="js/ratingManager.js"></script>
   <script src="js/daterate.js"></script>
+  <script src="js/fastclick.js"></script>
 
 </head>
 <body>
@@ -53,7 +54,7 @@
               Rating
           </h3>
       </div>
-      <div data-role="content">
+      <div data-role="content" id="ratingListContent">
           <div id="ratingList">
           </div>
           <!--<ul data-role="listview" data-divider-theme="d" data-inset="false">
@@ -67,6 +68,7 @@
       </div>
       <script>
               $( document ).ready(function() {
+                  FastClick.attach($('#ratingListContent')[0]);
                   var ratingManager = new RatingManager("dateTemplate2",$('#ratingList'));
                   ratingManager.init(function(localizeElements){
                       if (typeof localizeElements !== "undefined") {

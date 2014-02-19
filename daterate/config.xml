@@ -14,7 +14,9 @@
     <author href="http://runningios.com" email="b.nemeth.88@gmail.com">
         Balazs Nemeth
     </author>
-    
+
+    <!--gap:plugin name="nl.x-services.plugins.socialsharing" /-->
+
     <icon src="icon.png" />
     
     <feature name="http://api.phonegap.com/1.0/camera"/>
@@ -25,6 +27,7 @@
     <feature name="http://api.phonegap.com/1.0/network"/>
     <feature name="http://api.phonegap.com/1.0/notification"/>
      <preference name="android-installLocation" value="preferExternal" />
+
 
     <access origin="*" />
 
