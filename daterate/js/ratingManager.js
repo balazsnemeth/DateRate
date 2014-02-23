@@ -5,45 +5,65 @@ function RatingManager(templateName, placeToAppend) {
         this.downloadRatingData(callbackFn);
     }
 
+    function hideCategoryAtIndex(index){
+        var category = this.placeToAppend.find(".categories")[0];
+        $(category).fadeOut(FADE_TIME, "swing").css("display","none");
+    }
 
-    function insertRatingTamplate(data) {
+    function renderCategory(index,data){
+        var category = data.categories[index];
+        var rendered_html = this.render(this.templateName, category);
+        var renderedCategory = $(rendered_html);
+        //renderedCategory.css('display',"none");
+        renderedCategory.find(".starbody").each(function(i) {
+            var MainStarContainer = $(this).children(".MainStarContainer")[0];
+            console.log("1. $(MainStarContainer).children().length: "+$(MainStarContainer).children().length);
+            var myStarManager = new StarManager();
+            if($(this).children(".MainStarDescription").length > 0){
+                var MainStarDescription = $(this).children(".MainStarDescription")[0];
+                function starBeforeClicked(starIndex) {
+                    $(MainStarDescription).children().filter(function() { return $(this).css("display") == "block" }).css("display","none");
+                    var selectionIndex = 0;
+                    if(starIndex >= 2 && starIndex <= 3){
+                        selectionIndex = 1;
+                    }
+                    else if(starIndex >= 4){
+                        selectionIndex = 2;
+                    }
+                    var selectedDescription= $($(MainStarDescription).children(".starDescription")[selectionIndex]);
+                    selectedDescription.css("display","block");
+                }
+                myStarManager.addStar($(MainStarContainer), 5, starBeforeClicked);
+            }
+            else{
+                myStarManager.addStar($(MainStarContainer), 5);
+            }
+            console.log("2. $(MainStarContainer).children().length: "+$(MainStarContainer).children().length);
+        });
+        this.placeToAppend.append(renderedCategory).show('slow');
+    }
+
+    function insertRatingTamplate(data,callbackFn) {
         console.log(">>> insertRatingTamplate");
 
         var html = '<h1><span class="international" propkey="' + data.title + '">' + data.title + '</span></h1>';
         this.placeToAppend.append(html).show('slow');
 
-        for (var i = 0; i < data.categories.length; i++) {
-            var category = data.categories[i];
-            var rendered_html = this.render(this.templateName, category);
-            var renderedCategory = $(rendered_html);
-            //renderedCategory.css('display',"none");
-            renderedCategory.find(".starbody").each(function(i) {
-                var MainStarContainer = $(this).children(".MainStarContainer")[0];
-                console.log("1. $(MainStarContainer).children().length: "+$(MainStarContainer).children().length);
-                var myStarManager = new StarManager();
-                if($(this).children(".MainStarDescription").length > 0){
-                    var MainStarDescription = $(this).children(".MainStarDescription")[0];
-                    function starBeforeClicked(starIndex) {
-                        $(MainStarDescription).children().filter(function() { return $(this).css("display") == "block" }).css("display","none");
-                        var selectionIndex = 0;
-                        if(starIndex >= 2 && starIndex <= 3){
-                            selectionIndex = 1;
-                        }
-                        else if(starIndex >= 4){
-                            selectionIndex = 2;
-                        }
-                        var selectedDescription= $($(MainStarDescription).children(".starDescription")[selectionIndex]);
-                        selectedDescription.css("display","block");
-                    }
-                    myStarManager.addStar($(MainStarContainer), 5, starBeforeClicked);
-                }
-                else{
-                    myStarManager.addStar($(MainStarContainer), 5);
-                }
-                console.log("2. $(MainStarContainer).children().length: "+$(MainStarContainer).children().length);
-            });
-            this.placeToAppend.append(renderedCategory).show('slow');
-        }
+        /*for (var i = 0; i < data.categories.length; i++) {
+            setTimeout($.proxy(function() {
+                this.renderCategory(i,data);
+            },this), 0);
+        }*/
+        var c = 0;
+        var interval = setInterval($.proxy(function() {
+            this.renderCategory(c,data);
+            c++;
+            if(c >= data.categories.length){
+                clearInterval(interval);
+                callbackFn();
+            }
+        },this), 0);
+
         console.log("<<< insertRatingTamplate");
     }
 
@@ -116,10 +136,12 @@ function RatingManager(templateName, placeToAppend) {
             "success": $.proxy(function (json) {
                 //console.log(JSON.stringify(json));
                 commonData.userId = json.userID;
-                this.insertRatingTamplate(json.ratingSchema.evaluation);
+                this.insertRatingTamplate(json.ratingSchema.evaluation,function(){
+                    callbackFn(json.ratingSchema.localization);
+                });
                 $.mobile.loading('hide');
                 console.log("<<< hide done");
-                callbackFn(json.ratingSchema.localization);
+
             }, this),
             error: $.proxy(function (XMLHttpRequest, textStatus, errorThrown) {
                 //                  ajaxError(XMLHttpRequest, textStatus, errorThrown);
@@ -136,8 +158,10 @@ function RatingManager(templateName, placeToAppend) {
     this.templateName = templateName;
     this.init = init;
     this.insertRatingTamplate = insertRatingTamplate;
+    this.renderCategory = renderCategory;
     this.downloadRatingData = downloadRatingData;
     this.render = render;
+    this.lastRenderedCategoryIndex = 0;
 //    this.init();
 }
 

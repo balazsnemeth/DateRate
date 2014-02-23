@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>CreateDateRate | DateRate</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta charset="utf-8">
+    <title>CreateDateRate | DateRate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <script src="js/jquery-1.9.1.min.js"></script>
-  <script src="js/jquery.mobile.min.js"></script>
-  <script src="js/codiqa.ext.min.js"></script>
-  <script src="js/common.js"></script>
-  <script src="js/daterate.js"></script>
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.mobile.min.js"></script>
+    <script src="js/codiqa.ext.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/daterate.js"></script>
 </head>
 <body>
-  <div data-role="page" data-control-title="CreateDateRate" data-theme="b" id="page4">
-      <div data-theme="b" data-role="header">
-          <a data-role="button" href="index.html" class="ui-btn-left">
-              Menu
-          </a>
-          <a id="startButton" data-role="button" data-transition="slide" href="page5.html" class="ui-btn-right">
-              <span class="international" propkey="page4_StartRating"></span>
-          </a>
-          <h3>
-              Your date rating
-          </h3>
-      </div>
-      <div data-role="content">
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="evalutaionId">
-                  Your rating identifier
-              </label>
-              <input name="" id="evalutaionId" placeholder="" value="" type="text"/>
-          </div>
-          <a data-role="button" data-transition="turn" href="page4.html">
-              Share
-          </a>
-      </div>
-  </div>
-  
+<div data-role="page" data-control-title="CreateDateRate" data-theme="b" id="page4">
+    <div data-theme="b" data-role="header">
+        <a data-role="button" href="index.html" class="ui-btn-left">
+            Menu
+        </a>
+        <a id="startButton" data-role="button" data-transition="slide" href="page5.html" class="ui-btn-right">
+            <span class="international" propkey="page4_StartRating"></span>
+        </a>
+
+        <h3>
+            Your date rating
+        </h3>
+    </div>
+    <div data-role="content">
+        <div class="mainContent scrollable">
+            <div data-role="fieldcontain" data-controltype="textinput">
+                <label for="evalutaionId">
+                    Your rating identifier
+                </label>
+                <input name="" id="evalutaionId" placeholder="" value="Still not working, press start" type="text" readonly />
+            </div>
+            <a data-role="button" data-transition="turn" href="page4.html">
+                Share
+            </a>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

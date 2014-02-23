@@ -1,8 +1,4 @@
 
-.ui-page [data-role=content]{
-	margin: auto;
-	max-width: 400px;
-}
 
 .startAnimation{
 	width:15%;
@@ -37,10 +33,47 @@
 }
 
 body {
-    overflow: hidden;
+/*    overflow: hidden;
     -ms-content-zooming: none;
+    width: inherit;*/
+    margin: 0;
 }
 
-body {
-    -ms-touch-action:none;
+.scrollable {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+
+}
+
+/* iOS specific fix, don't use it on Android devices */
+/*.scrollable > * {
+    -webkit-transform: translateZ(0px);
+}*/
+
+div[data-role="page"] {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+}
+
+div[data-role="header"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.scrollable {
+    position: absolute;
+    top: 44px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.mainContent{
+    padding: 10px;
+    margin: auto;
+    max-width: 400px;
 }

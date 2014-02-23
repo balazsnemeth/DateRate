@@ -15,10 +15,11 @@
   <script src="js/star.js"></script>
   <script src="js/localize.js"></script>
   <script src="js/common.js"></script>
-  <script src="js/handlebars.js"></script>
+  <script src="js/util/handlebars.js"></script>
   <script src="js/ratingManager.js"></script>
+  <script src="js/createRateCategoryWorker_NOTUSED.js"></script>
   <script src="js/daterate.js"></script>
-  <script src="js/fastclick.js"></script>
+  <script src="js/util/fastclick.js"></script>
 
 </head>
 <body>
@@ -34,6 +35,9 @@
     jQuery.mobile.loader.prototype.options.text = "loading";
     jQuery.mobile.loader.prototype.options.textVisible = true;
     jQuery.mobile.loader.prototype.options.theme = "a";
+
+
+
 </script>
 
       <div data-role="page" data-control-title="joinDateRate" data-theme="b" id="page5">
@@ -48,9 +52,10 @@
               Rating
           </h3>
       </div>
-      <div data-role="content" id="ratingListContent">
-          <div id="ratingList">
-          </div>
+      <div data-role="content" class="scrollable">
+          <div id="ratingListContent" class="mainContent">
+              <div id="ratingList">
+              </div>
           <!--<ul data-role="listview" data-divider-theme="d" data-inset="false">
               <li data-role="list-divider" role="heading">
                   Inside properties
@@ -59,19 +64,21 @@
                   The guy spirit
               </li>
           </ul>-->
+          </div>
       </div>
-      <script>
-              $( document ).ready(function() {
-                  FastClick.attach($('#ratingListContent')[0]);
-                  var ratingManager = new RatingManager("dateTemplate2",$('#ratingList'));
-                  ratingManager.init(function(localizeElements){
-                      if (typeof localizeElements !== "undefined") {
-                          LocalizationManager.addLocalizeItems(localizeElements);
-                      };
-                      LocalizationManager.localizeBlock($('#ratingList'));
-                  });
-              });
-      </script>
+<script>
+    $( document ).on( 'pageinit', function(event){
+        FastClick.attach($('#ratingListContent')[0]);
+        var ratingManager = new RatingManager("dateTemplate2",$('#ratingList'));
+        ratingManager.init(function(localizeElements){
+            if (typeof localizeElements !== "undefined") {
+                LocalizationManager.addLocalizeItems(localizeElements);
+            };
+            LocalizationManager.localizeBlock($('#ratingList'));
+        });
+    });
+</script>
+
   </div>
 </body>
 </html>

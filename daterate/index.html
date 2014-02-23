@@ -1,123 +1,172 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>Home | DateRate</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta charset="utf-8">
+    <title>Home | DateRate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <link href="css/daterate_140.css" rel="stylesheet">
     <link href="css/jquery.mobile.icons.min.css" rel="stylesheet">
     <link href="css/codiqa.ext.min.css" rel="stylesheet">
     <link href="css/jquery.mobile.structure.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/star.css" rel="stylesheet">
+    <link href="css/main.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet">
+    <link href="css/star.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet">
 
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/jquery.mobile.min.js"></script>
-    <script src="js/fastclick.js"></script>
+    <script src="js/util/fastclick.js"></script>
+
 
     <script>
-    jQuery(document).bind("mobileinit", function () {
-        console.log("configuring jqm...");
-        jQuery.support.cors = true;
-        jQuery.mobile.allowCrossDomainPages = true;
-         
-        jQuery.mobile.phonegapNavigationEnabled = true;
-        jQuery.mobile.defaultDialogTransition = "pop";
-        jQuery.mobile.defaultPageTransition = "none";
-         
-        jQuery.mobile.loader.prototype.options.text = "loading";
-        jQuery.mobile.loader.prototype.options.textVisible = true;
-        jQuery.mobile.loader.prototype.options.theme = "a";
+        jQuery(document).bind("mobileinit", function () {
+            console.log("configuring jqm...");
+            jQuery.support.cors = true;
+            jQuery.mobile.allowCrossDomainPages = true;
 
-        console.log("fastclick added");
-        FastClick.attach(document.body);
-    });
-    $(document).bind("deviceReady", function()
-    {
-      navigator.globalization.getLocaleName(
-        function (locale) {
-            alert('locale: ' + locale.value + '\n');
-            LocalizationManager.currentLan = locale.value;
-        },
-          function () {alert('Error getting locale\n');}
-      );
-    });
+            jQuery.mobile.phonegapNavigationEnabled = true;
+            jQuery.mobile.defaultDialogTransition = "pop";
+            jQuery.mobile.defaultPageTransition = "none";
 
-</script>
-  <script src="js/codiqa.ext.min.js"></script>
-  <script src="js/localize.js"></script>
-  <script src="js/common.js"></script>
-  <script src="js/handlebars.js"></script>
+            jQuery.mobile.loader.prototype.options.text = "loading";
+            jQuery.mobile.loader.prototype.options.textVisible = true;
+            jQuery.mobile.loader.prototype.options.theme = "a";
+
+            console.log("fastclick added");
+            FastClick.attach(document.body);
+        });
+        $(document).bind("deviceReady", function () {
+            navigator.globalization.getLocaleName(
+                    function (locale) {
+                        alert('locale: ' + locale.value + '\n');
+                        LocalizationManager.currentLan = locale.value;
+                    },
+                    function () {
+                        alert('Error getting locale\n');
+                    }
+            );
+        });
+
+           </script>
+    <script src="js/codiqa.ext.min.js"></script>
+    <script src="js/localize.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/util/handlebars.js"></script>
     <script src="js/star.js"></script>
     <script src="js/ratingManager.js"></script>
-  <script src="js/daterate.js"></script> 
+    <script src="js/daterate.js"></script>
 </head>
 <body>
-  <div data-role="page" data-control-title="Home" data-theme="d" id="page1">
-      <div data-theme="d" data-role="header">
-          <h3>
-              Date Rate
-          </h3>
-      </div>
-      <div data-role="content" >
-          <div data-role="fieldcontain" data-controltype="textinput">
-              <label for="nameTextField">
-                  Your name
-              </label>
-              <input name="" id="nameTextField" placeholder="" value="" type="text"/>
-          </div>
-          <div data-role="fieldcontain" data-controltype="selectmenu">
-              <label for="genderSelect">
-                  Gender
-              </label>
-              <select id="genderSelect" name="">
-                  <option value="male">
-                      Male
-                  </option>
-                  <option value="female">
-                      Female
-                  </option>
-              </select>
-          </div>
-          <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;"/>
-          <a id="createDateRateButton" class="startAnimation" data-role="button" data-theme="d">
-              <span class="international" propkey="index_CreateDateRate"></span>
+<div data-role="page" data-control-title="Home" data-theme="d" id="page1">
+    <div data-theme="d" data-role="header">
+        <h3>
+            Date Rate
+        </h3>
+    </div>
+    <div data-role="content">
+        <div id="ratingListContent" class="mainContent scrollable">
+            <div data-role="fieldcontain" data-controltype="textinput">
+                <label for="nameTextField">
+                    Your name
+                </label>
+                <input name="" id="nameTextField" placeholder="" value="" type="text" tabindex="1"/>
+            </div>
+            <div data-role="fieldcontain" data-controltype="selectmenu">
+                <label for="genderSelect">
+                    Gender
+                </label>
+                <select id="genderSelect" name="" tabindex="2">
+                    <option value="male">
+                        Male
+                    </option>
+                    <option value="female">
+                        Female
+                    </option>
+                </select>
+            </div>
+            <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;"/>
+            <a id="createDateRateButton" class="startAnimation" data-role="button" data-theme="d" tabindex="3">
+                <span class="international" propkey="index_CreateDateRate"></span>
 
-          </a>
-          <a id="joinDateRate" class="startAnimation" data-rel="popup" data-position-to="window" data-role="button"  data-theme="d" href="#popupJoinRation">
-              <span class="international" propkey="index_JoinDateRate"></span>
-          </a>
-          <a id="showRatingStatus" class="startAnimation" data-rel="popup" data-position-to="window" data-role="button" data-theme="d" href="#popupRatingStatus" >
-              <span class="international" propkey="index_RatingStatus"></span>
-          </a>
+            </a>
+            <a id="joinDateRate" class="startAnimation" data-rel="popup" data-position-to="window" data-role="button"
+               data-theme="d" href="#popupJoinRation"  tabindex="4">
+                <span class="international" propkey="index_JoinDateRate"></span>
+            </a>
+            <a id="showRatingStatus" class="startAnimation" data-rel="popup" data-position-to="window"
+               data-role="button" data-theme="d" href="#popupRatingStatus"  tabindex="5">
+                <span class="international" propkey="index_RatingStatus"></span>
+            </a>
 
-          <div data-role="popup" id="popupRatingStatus" data-theme="d" class="ui-corner-all">
-              <form action="page6.html">
-                <div style="padding:10px 20px;">
-                  <h3>Enter rating code:</h3>
-                      <label for="un" class="ui-hidden-accessible">Code:</label>
-                          <input type="text" name="user" id="un" value="" placeholder="" data-theme="d" />
-                      <button type="submit" data-theme="b">Show rating status</button>
-                </div>
-              </form>
-          </div>
+            <div data-role="popup" id="popupRatingStatus" data-theme="d" class="ui-corner-all">
+                <form action="page6.html">
+                    <div style="padding:10px 20px;">
+                        <h3>Enter rating code:</h3>
+                        <label for="un" class="ui-hidden-accessible">Code:</label>
+                        <input type="text" name="user" id="un" value="" placeholder="" data-theme="d"/>
+                        <button type="submit" data-theme="b">Show rating status</button>
+                    </div>
+                </form>
+            </div>
 
-          <div data-role="popup" id="popupJoinRation" data-theme="d" class="ui-corner-all">
-              <form action="page7.html">
-                <div style="padding:10px 20px;">
-                  <h3>Enter rating code:</h3>
-                      <label for="un" class="ui-hidden-accessible">Code:</label>
-                          <input type="text" name="user" id="un" value="" placeholder="" data-theme="d" />
-                      <button type="submit" data-theme="b">Join to rating</button>
-                </div>
-              </form>
-          </div>
+            <div data-role="popup" id="popupJoinRation" data-theme="d" class="ui-corner-all">
+                <form action="page7.html">
+                    <div style="padding:10px 20px;">
+                        <h3>Enter rating code:</h3>
+                        <label for="un" class="ui-hidden-accessible">Code:</label>
+                        <input type="text" name="user" id="un" value="" placeholder="" data-theme="d"/>
+                        <button type="submit" data-theme="b">Join to rating</button>
+                    </div>
+                </form>
+            </div>
 
+        </div>
 
-      </div>
-  </div>
+    </div>
+    <script>
+        var itemAnimationStartTimeDifferent = 100;
+
+        $('.startAnimation').each(function (index) {
+            console.log(index);
+            setTimeout($.proxy(function () {
+                console.log('s' + index);
+                $(this).addClass('transformWidth');
+            }, this), index * itemAnimationStartTimeDifferent);
+        });
+
+        $('#createDateRateButton').keypress(function(e){
+            if(e.keyCode==13)
+                this.click();
+        });
+
+        $("#createDateRateButton").click(function (event) {
+            var name = $('#nameTextField').val();
+            if (name === '' || name == null || typeof name === "undefined") {
+                //$('#nameTextField').addClass('nonValidTextFiled');
+                $('#nameTextField').parent().addClass('nonValidTextFiled');
+                var label = $("label[for='nameTextField']");
+                label.addClass('nonValidLabel');
+                return;
+            } else {
+                $('#nameTextField').parent().removeClass('nonValidTextFiled');
+                var label = $("label[for='nameTextField']");
+                label.removeClass('nonValidLabel');
+            }
+            commonData.name = name;
+
+            commonData.gender = $('#genderSelect').val();
+
+            $.mobile.changePage("page4.html", { transition: "slide", changeHash: true });
+        });
+
+        $('#genderSelect').change(function () {
+            console.log('selected gender: ' + $('#genderSelect').val());
+            commonData.gender = $('#genderSelect').val();
+            app.updatePageStyle($('[data-role="page"]'));
+        });
+      </script>
+</div>
 </body>
 </html>
