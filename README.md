@@ -2,7 +2,7 @@ Date Rate
 ============
 
 The Date Rate is a little rating tool, at first it is specialized to rate a date. 
-This is a PhoneGap project optimized for mobile. This project is still in progress, so the code and the functionalities are not finalized. I just doing it for fun in my free time and learning JS.
+This is a PhoneGap project optimized for mobile. This project is still in progress, so the code and the functionalities are not finalized. I just doing it for fun in my freetime, I'm not a JS expert, I'm learning it on the job.
 
 ## Client side
 
@@ -23,11 +23,11 @@ The app is built from independent JS modules (little manager objects). The modul
 
 ## Server side
 
-The server is written in php. Currently it is so simple, that we decided not to use a third party MVC implementation (e.g Zend).
+The server is written in php. Currently it is so simple, that I decided not to use a third party MVC implementation (e.g Zend).
 
 ### Architecture
 
-Our architecture based on REST API concept, as a result each .php file is specialized to a given operation using the following abstract schema:
+The communication is based on REST API concept, as a result each .php file is specialized to perform a given operation using the following abstract schema:
 
 1. Perform the input parameters (POST params or JSON). Optional, only in case of POST és PUT requests.
 2. Execute some business logic depending on the inputs (e.g: join db table elements).
