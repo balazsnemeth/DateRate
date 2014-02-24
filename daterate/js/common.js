@@ -72,4 +72,3 @@ var commonData = {
 
 var serverBaseURL = "http://daterate.us/dr/testserver/"
 
-var LocalizationManager = new LocalizationManager();

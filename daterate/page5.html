@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>joinDateRate | DateRate</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta charset="utf-8">
+    <title>joinDateRate | DateRate</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <script src="js/jquery-1.9.1.min.js"></script>
-  <script src="js/jquery.mobile.min.js"></script>
-  <script src="js/codiqa.ext.min.js"></script>
-  <script src="js/common.js"></script>
-  <script src="js/daterate.js"></script>
-  <script src="js/star.js"></script>
-  <script src="js/localize.js"></script>
-  <script src="js/common.js"></script>
-  <script src="js/util/handlebars.js"></script>
-  <script src="js/ratingManager.js"></script>
-  <script src="js/createRateCategoryWorker_NOTUSED.js"></script>
-  <script src="js/daterate.js"></script>
-  <script src="js/util/fastclick.js"></script>
+    <script src="js/util/jquery-1.9.1.min.js"></script>
+    <script src="js/util/jquery.mobile.min.js"></script>
+    <script src="js/util/codiqa.ext.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/daterate.js"></script>
+    <script src="js/starManager.js"></script>
+    <script src="js/localizationManager.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/util/handlebars.js"></script>
+    <script src="js/ratingManager.js"></script>
+    <script src="js/createRateCategoryWorker_NOTUSED.js"></script>
+    <script src="js/daterate.js"></script>
+    <script src="js/util/fastclick.js"></script>
 
 </head>
 <body>
@@ -37,48 +37,49 @@
     jQuery.mobile.loader.prototype.options.theme = "a";
 
 
-
 </script>
 
-      <div data-role="page" data-control-title="joinDateRate" data-theme="b" id="page5">
-      <div data-theme="b" data-role="header">
-          <a data-role="button" href="page6.html" class="ui-btn-right">
-              Finish rate
-          </a>
-          <a data-role="button" data-direction="reverse" data-rel="back" href="page5.html" class="ui-btn-left">
-              Back
-          </a>
-          <h3 id="joinDateRate">
-              Rating
-          </h3>
-      </div>
-      <div data-role="content" class="scrollable">
-          <div id="ratingListContent" class="mainContent">
-              <div id="ratingList">
-              </div>
-          <!--<ul data-role="listview" data-divider-theme="d" data-inset="false">
-              <li data-role="list-divider" role="heading">
-                  Inside properties
-              </li>
-              <li data-theme="c">
-                  The guy spirit
-              </li>
-          </ul>-->
-          </div>
-      </div>
-<script>
-    $( document ).on( 'pageinit', function(event){
-        FastClick.attach($('#ratingListContent')[0]);
-        var ratingManager = new RatingManager("dateTemplate2",$('#ratingList'));
-        ratingManager.init(function(localizeElements){
-            if (typeof localizeElements !== "undefined") {
-                LocalizationManager.addLocalizeItems(localizeElements);
-            };
-            LocalizationManager.localizeBlock($('#ratingList'));
+<div data-role="page" data-control-title="joinDateRate" data-theme="b" id="page5">
+    <div data-theme="b" data-role="header">
+        <a data-role="button" href="page6.html" class="ui-btn-right">
+            Finish rate
+        </a>
+        <a data-role="button" data-direction="reverse" data-rel="back" href="page5.html" class="ui-btn-left">
+            Back
+        </a>
+
+        <h3 id="joinDateRate">
+            Rating
+        </h3>
+    </div>
+    <div data-role="content" class="scrollable">
+        <div id="ratingListContent" class="mainContent">
+            <div id="ratingList">
+            </div>
+            <!--<ul data-role="listview" data-divider-theme="d" data-inset="false">
+                <li data-role="list-divider" role="heading">
+                    Inside properties
+                </li>
+                <li data-theme="c">
+                    The guy spirit
+                </li>
+            </ul>-->
+        </div>
+    </div>
+    <script>
+        $(document).on('pageinit', function (event) {
+            require(['RatingManager', 'LocalizationManager','fastclick'], function (ratingManager, localizationManager, fastclick) {
+                fastclick.attach($('#ratingListContent')[0]);
+                ratingManager.init("dateTemplate2", $('#ratingList'), function (localizeElements) {
+                    if (typeof localizeElements !== "undefined") {
+                        localizationManager.addLocalizeItems(localizeElements);
+                        localizationManager.localizeBlock($('#ratingList'));
+                    }
+                });
+            });
         });
-    });
-</script>
+    </script>
 
-  </div>
+</div>
 </body>
 </html>

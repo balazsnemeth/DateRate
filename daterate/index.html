@@ -14,12 +14,12 @@
     <link href="css/main.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet">
     <link href="css/star.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet">
 
-    <script src="js/jquery-1.9.1.min.js"></script>
-    <script src="js/jquery.mobile.min.js"></script>
-    <script src="js/util/fastclick.js"></script>
+    <script src="js/util/jquery-1.9.1.min.js"></script>
+    <script src="js/util/jquery.mobile.min.js"></script>
 
 
     <script>
+
         jQuery(document).bind("mobileinit", function () {
             console.log("configuring jqm...");
             jQuery.support.cors = true;
@@ -33,9 +33,14 @@
             jQuery.mobile.loader.prototype.options.textVisible = true;
             jQuery.mobile.loader.prototype.options.theme = "a";
 
-            console.log("fastclick added");
-            FastClick.attach(document.body);
+            require(['fastclick'], function (fastclick) {
+                console.log("fastclick added");
+                fastclick.attach(document.body);
+            });
+
         });
+
+
         $(document).bind("deviceReady", function () {
             navigator.globalization.getLocaleName(
                     function (locale) {
@@ -46,17 +51,20 @@
                         alert('Error getting locale\n');
                     }
             );
+            require(['fastclick'], function (fastclick) {
+                console.log("fastclick added");
+                fastclick.attach(document.body);
+            });
+
         });
 
            </script>
-    <script src="js/codiqa.ext.min.js"></script>
-    <script src="js/localize.js"></script>
+    <script src="js/util/codiqa.ext.min.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/app.js"></script>
     <script src="js/util/handlebars.js"></script>
-    <script src="js/star.js"></script>
-    <script src="js/ratingManager.js"></script>
-    <script src="js/daterate.js"></script>
+    <script type="text/javascript" data-main="js/daterate" src="js/util/require.min.js"></script>
+
+
 </head>
 <body>
 <div data-role="page" data-control-title="Home" data-theme="d" id="page1">
@@ -66,7 +74,7 @@
         </h3>
     </div>
     <div data-role="content">
-        <div id="ratingListContent" class="mainContent scrollable">
+        <div id="ratingListFieldContent" class="mainContent scrollable">
             <div data-role="fieldcontain" data-controltype="textinput">
                 <label for="nameTextField">
                     Your name
@@ -126,6 +134,7 @@
 
     </div>
     <script>
+
         var itemAnimationStartTimeDifferent = 100;
 
         $('.startAnimation').each(function (index) {
@@ -155,16 +164,16 @@
                 label.removeClass('nonValidLabel');
             }
             commonData.name = name;
-
             commonData.gender = $('#genderSelect').val();
-
             $.mobile.changePage("page4.html", { transition: "slide", changeHash: true });
         });
 
         $('#genderSelect').change(function () {
             console.log('selected gender: ' + $('#genderSelect').val());
             commonData.gender = $('#genderSelect').val();
-            app.updatePageStyle($('[data-role="page"]'));
+            require(['app'], function (app) {
+                app.updatePageStyle($('[data-role="page"]'));
+            });
         });
       </script>
 </div>

@@ -1,4 +1,6 @@
-function LocalizationManager() {
+define(function (require) {
+
+    function LocalizationManager() {
 
     var Language = {};
     var currentLan = 'en';
@@ -74,4 +76,9 @@ function LocalizationManager() {
     this.currentLan = currentLan;
 //    this.init();
 }
-
+    if(typeof daterate_sharedLocalizationManager === 'undefined'){
+        var LocalizationManager = new LocalizationManager();
+        daterate_sharedLocalizationManager = LocalizationManager;
+    }
+    return daterate_sharedLocalizationManager;
+});

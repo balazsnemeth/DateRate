@@ -2530,4 +2530,19 @@ var Handlebars = {};
     ;
 // lib/handlebars/browser-suffix.js
 })(Handlebars);
-;
+
+
+
+if (typeof define !== 'undefined' && define.amd) {
+
+    // AMD. Register as an anonymous module.
+    define(function() {
+        'use strict';
+        return Handlebars;
+    });
+} else if (typeof module !== 'undefined' && module.exports) {
+    module.exports.Handlebars = Handlebars;
+} else {
+    window.Handlebars = Handlebars;
+}
+
