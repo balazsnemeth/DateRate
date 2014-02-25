@@ -2,7 +2,8 @@ Date Rate
 ============
 
 The Date Rate is a little rating tool, at first it is specialized to rate a date. 
-This is a PhoneGap project optimized for mobile. This project is still in progress, so the code and the functionalities are not finalized. I just doing it for fun in my freetime, I'm not a JS expert, I'm learning it on the job.
+This is a PhoneGap project optimized for mobile. This project is still in progress, so the code and the functionalities are not finalized. Currently only the first and the third (page5.html) page is in operation. 
+I just doing this project for fun in my freetime, I'm not a JS expert, I'm learning JS on the job.
 
 ## Client side
 
