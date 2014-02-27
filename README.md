@@ -30,7 +30,7 @@ The server is written in php. Currently it is so simple, that I decided not to u
 
 The communication is based on REST API concept, as a result each .php file is specialized to perform a given operation using the following abstract schema:
 
-1. Perform the input parameters (POST params or JSON). Optional, only in case of POST és PUT requests.
+1. Perform the input parameters (POST params or JSON). Optional, only in case of POST and PUT requests.
 2. Execute some business logic depending on the inputs (e.g: join db table elements).
 3. Create JSON response
 
