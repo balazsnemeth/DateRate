@@ -1,9 +1,10 @@
 Date Rate
 ============
 
-The Date Rate is a little rating tool, at first it is specialized to rate a date. 
-This is a PhoneGap project optimized for mobile. This project is still in progress, so the code and the functionalities are not finalized. Currently only the first and the third (page5.html) page is in operation. 
-I just doing this project for fun in my freetime, I'm not a JS expert, I'm learning JS on the job.
+The Date Rate is a web based mobile app, at first it is specialized to rate a date.
+
+This is a PhoneGap project optimized for mobile (mobile first, web second strategy). This project is still in progress, so the code and the functionalities are not finalized. Currently only the first and the third (page5.html) page is in operation. 
+I just doing this project for fun in my freetime.
 
 ## Client side
 
@@ -11,8 +12,9 @@ I just doing this project for fun in my freetime, I'm not a JS expert, I'm learn
 
 * [jQuery](http://jquery.com/), [jQueryMobile](http://jquerymobile.com)
 * [require.js](http://requirejs.org/)
-* [fastclick.js](https://github.com/ftlabs/fastclick)
+* [knockout.js](http://knockoutjs.com/)
 * [handlebars.js](http://handlebarsjs.com/)
+* [fastclick.js](https://github.com/ftlabs/fastclick)
 
 ### Modules
 The app is built from independent JS modules (little manager objects). The modules are defined as AMD (require.js) just like the previous JS libs. The list of the more-or-less completed modules:
@@ -20,7 +22,8 @@ The app is built from independent JS modules (little manager objects). The modul
 1. LocalizationManager - it is responsible for localize a given DOM element, download the localization data and provide services the localization to be managed.
 2. RatingManager - it is respionsible for downloading the rating structure, rendering the rate screen based on a static HTML template using Handlebar.
 3. StarManager - it is responsilbe for managing the stars. It is responsible for selecting, deselecting stars, animations, fastclick, etc...
-4. app.js - to handle the page changes, global configurations (e.g the gender, user language).
+4. StartPage - handle the events, changes of the fist page. The page is bound to a view-data-model using knockout.
+5. app.js - to handle the page changes, global configurations (e.g the gender, user language).
 
 ## Server side
 
