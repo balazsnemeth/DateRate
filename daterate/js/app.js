@@ -1,9 +1,13 @@
 /* file: js/app.js */
 define(
-    ['localizationManager'],
-    function (localizationManager) {
+    ['localizationManager','startPage'],
+    function (localizationManager,startPage) {
     function DateRateApp() {
         function init() {
+
+
+            startPage.attachEvent();
+            startPage.animate();
 
             commonData.gender = $('#genderSelect').val();
             language = window.navigator.userLanguage || window.navigator.language;

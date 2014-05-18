@@ -14,51 +14,9 @@
     <link href="css/main.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet">
     <link href="css/star.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet">
 
+    <!--script src="js/util/knockout-3.1.0.js"></script-->
     <script src="js/util/jquery-1.9.1.min.js"></script>
     <script src="js/util/jquery.mobile.min.js"></script>
-
-
-    <script>
-
-        jQuery(document).bind("mobileinit", function () {
-            console.log("configuring jqm...");
-            jQuery.support.cors = true;
-            jQuery.mobile.allowCrossDomainPages = true;
-
-            jQuery.mobile.phonegapNavigationEnabled = true;
-            jQuery.mobile.defaultDialogTransition = "pop";
-            jQuery.mobile.defaultPageTransition = "none";
-
-            jQuery.mobile.loader.prototype.options.text = "loading";
-            jQuery.mobile.loader.prototype.options.textVisible = true;
-            jQuery.mobile.loader.prototype.options.theme = "a";
-
-            require(['fastclick'], function (fastclick) {
-                console.log("fastclick added");
-                fastclick.attach(document.body);
-            });
-
-        });
-
-
-        $(document).bind("deviceReady", function () {
-            navigator.globalization.getLocaleName(
-                    function (locale) {
-                        alert('locale: ' + locale.value + '\n');
-                        LocalizationManager.currentLan = locale.value;
-                    },
-                    function () {
-                        alert('Error getting locale\n');
-                    }
-            );
-            require(['fastclick'], function (fastclick) {
-                console.log("fastclick added");
-                fastclick.attach(document.body);
-            });
-
-        });
-
-           </script>
     <script src="js/util/codiqa.ext.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/util/handlebars.js"></script>
@@ -79,19 +37,16 @@
                 <label for="nameTextField">
                     Your name
                 </label>
-                <input name="" id="nameTextField" placeholder="" value="" type="text" tabindex="1"/>
+                <input name="" id="nameTextField" placeholder="" data-bind="value: commonData.name" value="" type="text" tabindex="1"/>
             </div>
             <div data-role="fieldcontain" data-controltype="selectmenu">
                 <label for="genderSelect">
                     Gender
                 </label>
-                <select id="genderSelect" name="" tabindex="2">
-                    <option value="male">
-                        Male
-                    </option>
-                    <option value="female">
-                        Female
-                    </option>
+                <select  id="genderSelect" name="" tabindex="2" data-bind="options: genderOptions,
+                                                                           optionsText: 'name',
+                                                                           optionsValue: 'value',
+                                                                           value: commonData.gender">
                 </select>
             </div>
             <hr style="height:3px; background-color:#ccc; border:0; margin-top:12px; margin-bottom:12px;"/>
@@ -133,49 +88,6 @@
         </div>
 
     </div>
-    <script>
-
-        var itemAnimationStartTimeDifferent = 100;
-
-        $('.startAnimation').each(function (index) {
-            console.log(index);
-            setTimeout($.proxy(function () {
-                console.log('s' + index);
-                $(this).addClass('transformWidth');
-            }, this), index * itemAnimationStartTimeDifferent);
-        });
-
-        $('#createDateRateButton').keypress(function(e){
-            if(e.keyCode==13)
-                this.click();
-        });
-
-        $("#createDateRateButton").click(function (event) {
-            var name = $('#nameTextField').val();
-            if (name === '' || name == null || typeof name === "undefined") {
-                //$('#nameTextField').addClass('nonValidTextFiled');
-                $('#nameTextField').parent().addClass('nonValidTextFiled');
-                var label = $("label[for='nameTextField']");
-                label.addClass('nonValidLabel');
-                return;
-            } else {
-                $('#nameTextField').parent().removeClass('nonValidTextFiled');
-                var label = $("label[for='nameTextField']");
-                label.removeClass('nonValidLabel');
-            }
-            commonData.name = name;
-            commonData.gender = $('#genderSelect').val();
-            $.mobile.changePage("page4.html", { transition: "slide", changeHash: true });
-        });
-
-        $('#genderSelect').change(function () {
-            console.log('selected gender: ' + $('#genderSelect').val());
-            commonData.gender = $('#genderSelect').val();
-            require(['app'], function (app) {
-                app.updatePageStyle($('[data-role="page"]'));
-            });
-        });
-      </script>
 </div>
 </body>
 </html>

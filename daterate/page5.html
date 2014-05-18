@@ -17,7 +17,7 @@
     <script src="js/common.js"></script>
     <script src="js/util/handlebars.js"></script>
     <script src="js/ratingManager.js"></script>
-    <script src="js/createRateCategoryWorker_NOTUSED.js"></script>
+    <!--script src="js/createRateCategoryWorker_NOTUSED.js"></script-->
     <script src="js/daterate.js"></script>
     <script src="js/util/fastclick.js"></script>
 
@@ -68,16 +68,19 @@
     </div>
     <script>
         $(document).on('pageinit', function (event) {
-            require(['RatingManager', 'LocalizationManager','fastclick'], function (ratingManager, localizationManager, fastclick) {
-                fastclick.attach($('#ratingListContent')[0]);
-                ratingManager.init("dateTemplate2", $('#ratingList'), function (localizeElements) {
-                    if (typeof localizeElements !== "undefined") {
-                        localizationManager.addLocalizeItems(localizeElements);
-                        localizationManager.localizeBlock($('#ratingList'));
-                    }
+            require(
+                    ['RatingManager', 'LocalizationManager','fastclick'],
+                    function (ratingManager, localizationManager, fastclick) {
+                        var $ratingList = $('#ratingList');
+                        fastclick.attach($('#ratingListContent')[0]);
+                        ratingManager.init("dateTemplate2", $ratingList, function (localizeElements) {
+                        if (typeof localizeElements !== "undefined") {
+                            localizationManager.addLocalizeItems(localizeElements);
+                            localizationManager.localizeBlock($ratingList);
+                        }
+                    });
                 });
             });
-        });
     </script>
 
 </div>

@@ -67,30 +67,13 @@ define(
                     },context), 0);
                 })(i,this,data.categories.length-1);
             }
-
-
-
-/*            var c = 0;
-            var interval = setInterval($.proxy(function () {
-                this.renderCategory(c, data);
-                c++;
-                if (c >= data.categories.length) {
-                    clearInterval(interval);
-                    callbackFn();
-                }
-            }, this), 0);*/
-
             console.log("<<< insertRatingTamplate");
         }
 
         handlebars.registerHelper("starBlock", function (obj, option) {
-            //var currentMainContainerId = guid();
-            //var currentMainDescriptionId = guid();
 
             var MainStarContainer = $("<div class='MainStarContainer'></div>");
             var MainStarDescription = $('<div clas="MainStarDescription"></div>');
-
-//        var htmlTemplate = option.fn({mainStarContainerId: currentMainContainerId, mainStarDescriptionId: currentMainDescriptionId});
 
             if (typeof obj.descriptions !== 'undefined') {
                 var values = [];
@@ -157,6 +140,7 @@ define(
                         console.log("localize");
                         callbackFn(json.ratingSchema.localization);
                     });
+
                     $.mobile.loading('hide');
                     console.log("<<< hide done");
 

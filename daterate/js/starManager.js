@@ -2,7 +2,9 @@
  * A module manage the stars. It is responsible for selecting, deselecting stars.
  * @module StarManager
  */
-define(function (require) {
+define(
+    ['ko'],
+    function (ko) {
     /**
      * To create a line of stars. It is responsible for selecting, deselecting stars.
      */
